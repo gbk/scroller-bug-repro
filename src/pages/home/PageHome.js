@@ -8,6 +8,12 @@ class Page extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        setTimeout(() => {
+            this.refs.sc.scroller.refresh();
+        }, 0);
+    }
+
     handleScrollEnd() {
         console.log("scrolled to end");
     }
@@ -15,7 +21,7 @@ class Page extends React.Component {
     render() {
         let t = this;
         return (
-            <Scroller className="page" ref="sc" mouseWheel={true} onScrollEnd={t.handleScrollEnd.bind(t)}>
+            <Scroller className="page" ref="sc" disablePointer onScrollEnd={t.handleScrollEnd.bind(t)}>
                 <div>
                 <Group.Head>{"列表标题1"}</Group.Head>
                 <Group.List>
