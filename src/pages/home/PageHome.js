@@ -21,7 +21,7 @@ class Page extends React.Component {
     render() {
         let t = this;
         return (
-            <Scroller className="page" ref="sc" disablePointer onScrollEnd={t.handleScrollEnd.bind(t)}>
+            <Scroller className="page" ref="sc" disablePointer mouseWheel onScrollEnd={t.handleScrollEnd.bind(t)}>
                 <div>
                 <Group.Head>{"列表标题1"}</Group.Head>
                 <Group.List>
